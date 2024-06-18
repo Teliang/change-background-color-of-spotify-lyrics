@@ -2,7 +2,7 @@
 // @name         Change the background color of Spotify lyrics.
 // @namespace    http://tampermonkey.net/
 // @version      2024-06-14
-// @description  Change the background color of Spotify lyrics. Spotifyの歌詞の背景色を変更するスクリプト。
+// @description  Spotifyの歌詞の背景色を変更するスクリプト。
 // @author       telianghung@outlook.com
 // @match        https://open.spotify.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=spotify.com
