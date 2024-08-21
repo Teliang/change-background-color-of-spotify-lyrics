@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Change the background color of Spotify lyrics.
 // @namespace    http://tampermonkey.net/
-// @version      2024-06-14
+// @version      0.2
 // @description  Spotifyの歌詞の背景色を変更するスクリプト。
 // @author       telianghung@outlook.com
 // @match        https://open.spotify.com/*
@@ -19,7 +19,7 @@
 
         const backgroundColor = `--lyrics-color-background: ${color};`
 
-        const lyricsElement = document.querySelector('[aria-label="Spotify"] > :first-child')
+        const lyricsElement = document.querySelector('[aria-label="Spotify"][tabindex="-1"] > :first-child')
 
         if (!lyricsElement) return;
 
