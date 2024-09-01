@@ -15,7 +15,7 @@
          // 希望なcolor
         const color = 'rgb(121, 121, 121)'
 
-        if(location.href !== "https://open.spotify.com/lyrics") return;
+        if(!location.href.includes('https://open.spotify.com/lyrics')) return;
 
         const backgroundColor = `--lyrics-color-background: ${color};`
 
