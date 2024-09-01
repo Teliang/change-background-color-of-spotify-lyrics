@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Change the background color of Spotify lyrics.
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.3
 // @description  Spotifyの歌詞の背景色を変更するスクリプト。
 // @author       telianghung@outlook.com
 // @match        https://open.spotify.com/*
