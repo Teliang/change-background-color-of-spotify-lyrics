@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Change the background color of Spotify lyrics.
 // @namespace    http://tampermonkey.net/
-// @version      0.3
+// @version      0.4
 // @description  Spotifyの歌詞の背景色を変更するスクリプト。
 // @author       telianghung@outlook.com
 // @match        https://open.spotify.com/*
@@ -13,26 +13,26 @@
     'use strict';
     const fun = () =>{
          // 希望なcolor
-        const color = 'rgb(121, 121, 121)'
+        const active = '#fff';
+        const inactive = '#000000';
+        const passed = '#000000';
+        const background = '#333333';
+        const messaging = '#fff';
 
         if(!location.href.includes('https://open.spotify.com/lyrics')) return;
-
-        const backgroundColor = `--lyrics-color-background: ${color};`
 
         const lyricsElement = document.querySelector('[aria-label="Spotify"][tabindex="-1"] > :first-child')
 
         if (!lyricsElement) return;
 
-        // 正規表現を使って --lyrics-color-background: rgb(...) の値を抽出
-        const match = lyricsElement.style.cssText.match(/--lyrics-color-background:\s*rgb\(\d{1,3},\s*\d{1,3},\s*\d{1,3}\);/);
 
-        // 抽出した値が期待する値かどうかを確認
-        if (match && match[0] !== backgroundColor) {
-            lyricsElement.style.cssText= lyricsElement.style.cssText.replace(/(--lyrics-color-background:\s*rgb\([^)]+\);)/g, backgroundColor)
+        const expected_css_text = `--lyrics-color-active: ${active}; --lyrics-color-inactive: ${inactive}; --lyrics-color-passed: ${passed}; --lyrics-color-background: ${background}; --lyrics-color-messaging: ${messaging};`;
+
+        if (expected_css_text !==lyricsElement.style.cssText) {
+            lyricsElement.style.cssText = expected_css_text
             console.log('background colorを変えた')
         }
     }
-
 
     setInterval(fun, 1000)
 })();
